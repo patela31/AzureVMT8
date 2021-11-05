@@ -6,6 +6,13 @@ terraform {
       version = "2.55.0"
     }
   }
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organisation = "example-org-37c7b3"
+    workspaces {
+      name = "AzureVMT8"
+    }
+  }
 }
 provider "azurerm" {
   features {}
